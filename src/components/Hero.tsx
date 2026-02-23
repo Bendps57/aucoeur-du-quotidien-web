@@ -1,5 +1,5 @@
 import heroBg from "@/assets/hero-bg.jpg";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo-original.png";
 
 const Hero = () => {
   return (
@@ -15,15 +15,17 @@ const Hero = () => {
           className="w-full h-full object-cover"
           loading="eager"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/50 to-background/85" />
       </div>
 
       <div className="relative z-10 text-center max-w-3xl mx-auto">
-        <img
-          src={logo}
-          alt="Au Cœur du Quotidien"
-          className="h-32 md:h-40 w-auto mx-auto mb-8 drop-shadow-lg"
-        />
+        <div className="inline-block rounded-full p-4 bg-background/80 backdrop-blur-sm mb-8 shadow-lg">
+          <img
+            src={logo}
+            alt="Au Cœur du Quotidien"
+            className="h-28 md:h-36 w-auto"
+          />
+        </div>
         <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-5">
           Au Cœur du Quotidien
         </h1>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo-original.png";
 
 const navLinks = [
   { label: "Accueil", href: "#accueil" },
@@ -16,7 +16,7 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-card/90 backdrop-blur-md border-b">
       <div className="container mx-auto flex items-center justify-between py-3 px-4">
         <a href="#accueil" className="flex items-center gap-3">
-          <img src={logo} alt="Au Cœur du Quotidien" className="h-12 w-auto" />
+          <img src={logo} alt="Au Cœur du Quotidien" className="h-12 w-auto mix-blend-multiply" />
           <span className="font-serif text-lg font-semibold text-foreground hidden sm:inline">
             Au Cœur du Quotidien
           </span>
