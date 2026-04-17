@@ -12,7 +12,20 @@ const Contact = () => {
       toast({ title: "Erreur", description: "Veuillez remplir tous les champs.", variant: "destructive" });
       return;
     }
-    toast({ title: "Message envoyé !", description: "Nous vous répondrons dans les plus brefs délais." });
+
+    const subject = encodeURIComponent(`Demande de contact - ${form.name.trim()}`);
+    const body = encodeURIComponent(
+      [
+        `Nom : ${form.name.trim()}`,
+        `Email : ${form.email.trim()}`,
+        "",
+        "Message :",
+        form.message.trim(),
+      ].join("\n"),
+    );
+
+    window.location.href = `mailto:isabellewemmert@gmail.com?subject=${subject}&body=${body}`;
+    toast({ title: "Messagerie ouverte", description: "Votre email est prêt à être envoyé à Isabelle." });
     setForm({ name: "", email: "", message: "" });
   };
 

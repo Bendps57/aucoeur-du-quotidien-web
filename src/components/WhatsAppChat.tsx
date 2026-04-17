@@ -1,14 +1,33 @@
+import type { MouseEvent } from "react";
 import { MessageCircle } from "lucide-react";
 
 const WhatsAppChat = () => {
   const phoneNumber = "33633628812";
   const message =
     "Bonjour, je vous contacte depuis votre site Au Cœur du Quotidien.";
-  const href = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  const encodedMessage = encodeURIComponent(message);
+
+  const handleOpenChat = (event: MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+
+    const isMobileDevice = /Android|iPhone|iPad|iPod|Windows Phone/i.test(
+      navigator.userAgent,
+    );
+    const href = isMobileDevice
+      ? `https://wa.me/${phoneNumber}?text=${encodedMessage}`
+      : `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
+
+    const chatWindow = window.open(href, "_blank", "noopener,noreferrer");
+
+    if (!chatWindow) {
+      window.location.assign(href);
+    }
+  };
 
   return (
     <a
-      href={href}
+      href={`https://wa.me/${phoneNumber}?text=${encodedMessage}`}
+      onClick={handleOpenChat}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Discuter sur WhatsApp"
