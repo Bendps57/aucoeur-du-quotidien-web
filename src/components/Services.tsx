@@ -1,4 +1,4 @@
-import { FileText, ShoppingCart, Car, Home, Baby } from "lucide-react";
+import { FileText, ShoppingCart, Car, Home, Baby, UtensilsCrossed } from "lucide-react";
 
 const services = [
   {
@@ -31,6 +31,12 @@ const services = [
     description:
       "Garde attentive et bienveillante de vos enfants à votre domicile, dans un environnement familier et sécurisé.",
   },
+  {
+    icon: UtensilsCrossed,
+    title: "Préparation de vos Repas",
+    description:
+      "Préparation de repas équilibrés et savoureux à votre domicile, adaptés à vos goûts et à vos besoins nutritionnels.",
+  },
 ];
 
 const Services = () => {
@@ -44,7 +50,7 @@ const Services = () => {
           Des prestations personnalisées pour vous simplifier la vie au quotidien.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service) => (
             <div
               key={service.title}
