@@ -26,9 +26,12 @@ const Hero = () => {
             className="h-28 md:h-36 w-auto"
           />
         </div>
-        <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-5">
+        <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-3">
           Au Cœur du Quotidien
         </h1>
+        <p className="font-serif text-xl md:text-2xl text-accent italic mb-5">
+          par Isabelle
+        </p>
         <p className="font-body text-lg md:text-xl text-muted-foreground max-w-xl mx-auto mb-10 leading-relaxed">
           Services d'aide à domicile et d'organisation du quotidien,
           avec bienveillance et professionnalisme.
