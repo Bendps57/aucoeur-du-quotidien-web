@@ -17,10 +17,16 @@ const WhatsAppChat = () => {
       ? `https://wa.me/${phoneNumber}?text=${encodedMessage}`
       : `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
 
-    const chatWindow = window.open(href, "_blank", "noopener,noreferrer");
+    const chatWindow = window.top?.open?.(href, "_blank", "noopener,noreferrer");
 
     if (!chatWindow) {
-      window.location.assign(href);
+      const link = document.createElement("a");
+      link.href = href;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer external";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     }
   };
 
